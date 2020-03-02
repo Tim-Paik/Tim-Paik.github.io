@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Tim_Paik&#39;Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-03-02T08:19:02.913Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Tim_Paik</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一篇博客？</title>
+    <link href="http://yoursite.com/2020/03/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%9F/"/>
+    <id>http://yoursite.com/2020/03/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%9F/</id>
+    <published>2020-03-02T08:10:25.000Z</published>
+    <updated>2020-03-02T08:19:02.913Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;大概花了一天半的时间，我搭建完成了我的博客！&lt;/p&gt;
+&lt;p&gt;虽然就是照搬模板，然而还是有一些成就感（？）&lt;/p&gt;
+&lt;p&gt;使用的是HEXO的模板，主题选了AIRA（不得不说，这么好看的主题用的人好少啊，帮助文档也好少）&lt;/p&gt;
+&lt;p&gt;还有为什么 fontawesome 没有
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="人生第一次" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E7%AC%AC%E4%B8%80%E6%AC%A1/"/>
+    
+  </entry>
+  
+</feed>
