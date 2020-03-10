@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="google-site-verification" content="8Pv6G_8_O93tx_uWCDyrsI-zfr0M483QZDnyaMiNkHU">
+    
+    
+    <meta name="keywords" content="timpaik, Tim_Paik, TimPaik, Tim-Paik, 博客, 个人博客">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="Tim_Paik'Blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>用HEXO搭建你自己的博客！（中） | Tim_Paik'Blog</title>
+  <meta name="generator" content="Hexo 4.2.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">Tim_Paik'Blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://tim-paik.github.io/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%AD%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Tim_Paik">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/timpaik.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="Tim_Paik'Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">用HEXO搭建你自己的博客！（中）</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-03-11T04:00:00+08:00">2020-03-11 04:00:00</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>前几天我搭建了我的博客！<br>现在我把搭建的过程记下来（顺便存个档防止健忘症en）<br>本文是使用Windows 10 LTSC作为平台搭建的，但Hexo完全跨平台，大部分命令通用（有些命令要加<code>sudo</code>哦）<br>PS:本项目无任何预算！全部是免费的XD</p>
+<a id="more"></a>
+
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p><a href="/2020/03/11/用HEXO搭建你自己的博客！（上）/">用HEXO搭建你自己的博客！（上）</a><br><a href="/2020/03/11/用HEXO搭建你自己的博客！（中）/">用HEXO搭建你自己的博客！（中）</a><br><a href="/2020/03/11/用HEXO搭建你自己的博客！（下）/">用HEXO搭建你自己的博客！（下）</a></p>
+<h5 id="安装主题！"><a href="#安装主题！" class="headerlink" title="安装主题！"></a>安装主题！</h5><p><strong>当前我其实不推荐没有接触过前端的同学安装本文所用的ARIA框架，网上基本没有相关教程，如果你看完了本文后还是不会，请转到<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/README.md" target="_blank" rel="noopener">NexT</a>这个主题，百度一搜能找出一大堆教程——</strong></p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/AlynxZhou/hexo-theme-aria themes/aria<br></code></pre></td></tr></table></figure>
+
+<h4 id="以下转载与ARIA的github仓库——"><a href="#以下转载与ARIA的github仓库——" class="headerlink" title="以下转载与ARIA的github仓库——"></a>以下转载与ARIA的github仓库——</h4><hr>
+<h5 id="修改你站点的-config-yml"><a href="#修改你站点的-config-yml" class="headerlink" title="修改你站点的_config.yml"></a>修改<strong>你站点的</strong><code>_config.yml</code></h5><h6 id="把主题修改为-aria"><a href="#把主题修改为-aria" class="headerlink" title="把主题修改为 aria"></a>把主题修改为 <code>aria</code></h6> <figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">aria</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="语言设置，可以设置的值为-zh-CN、zh-HK、zh-TW-或-en。如果你从别的主题转移过来比如旧版本-NexT，请注意这里不是-zh-Hans-而是-zh-CN。default-是-en-的别名。"><a href="#语言设置，可以设置的值为-zh-CN、zh-HK、zh-TW-或-en。如果你从别的主题转移过来比如旧版本-NexT，请注意这里不是-zh-Hans-而是-zh-CN。default-是-en-的别名。" class="headerlink" title="语言设置，可以设置的值为 zh_CN、zh_HK、zh_TW 或 en。如果你从别的主题转移过来比如旧版本 NexT，请注意这里不是 zh-Hans 而是 zh_CN。default 是 en 的别名。"></a>语言设置，可以设置的值为 <code>zh_CN</code>、<code>zh_HK</code>、<code>zh_TW</code> 或 <code>en</code>。如果你从别的主题转移过来比如旧版本 NexT，请注意这里不是 <code>zh-Hans</code> 而是 <code>zh_CN</code>。<code>default</code> 是 <code>en</code> 的别名。</h6><figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">zh_CN</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="Hexo-搜索插件的配置"><a href="#Hexo-搜索插件的配置" class="headerlink" title="Hexo 搜索插件的配置"></a>Hexo 搜索插件的配置</h6><figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Hexo local search</span><br><span class="hljs-attr">search:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">search.xml</span><br>  <span class="hljs-attr">field:</span> <span class="hljs-string">all</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="Hexo-RSS-插件的配置"><a href="#Hexo-RSS-插件的配置" class="headerlink" title="Hexo RSS 插件的配置"></a>Hexo RSS 插件的配置</h6><figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Hexo feed</span><br><span class="hljs-attr">feed:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">atom</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">atom.xml</span><br>  <span class="hljs-attr">limit:</span> <span class="hljs-number">20</span><br>  <span class="hljs-attr">hub:</span><br>  <span class="hljs-attr">content:</span><br>  <span class="hljs-attr">content_limit:</span> <span class="hljs-number">140</span><br>  <span class="hljs-attr">content_limit_delim:</span> <span class="hljs-string">' '</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="高亮设置，Hexo-内置的语法高亮功能使用了-highlight-js，但默认却没有给高亮的类名添加-hljs-的前缀，而-highlight-js-项目提供的-CSS-文件却使用了这个前缀。为了保持和-highlight-js-项目-CSS-文件的兼容性，你需要像下面一样添加-hljs-true-到对应的配置里："><a href="#高亮设置，Hexo-内置的语法高亮功能使用了-highlight-js，但默认却没有给高亮的类名添加-hljs-的前缀，而-highlight-js-项目提供的-CSS-文件却使用了这个前缀。为了保持和-highlight-js-项目-CSS-文件的兼容性，你需要像下面一样添加-hljs-true-到对应的配置里：" class="headerlink" title="高亮设置，Hexo 内置的语法高亮功能使用了 highlight.js，但默认却没有给高亮的类名添加 hljs- 的前缀，而 highlight.js 项目提供的 CSS 文件却使用了这个前缀。为了保持和 highlight.js 项目 CSS 文件的兼容性，你需要像下面一样添加 hljs: true 到对应的配置里："></a>高亮设置，Hexo 内置的语法高亮功能使用了 highlight.js，但默认却没有给高亮的类名添加 <code>hljs-</code> 的前缀，而 highlight.js 项目提供的 CSS 文件却使用了这个前缀。为了保持和 highlight.js 项目 CSS 文件的兼容性，你需要像下面一样添加 <code>hljs: true</code> 到对应的配置里：</h6><figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">highlight:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">hljs:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># 添加这一行！</span><br>  <span class="hljs-attr">line_number:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">auto_detect:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">tab_replace:</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="复制-ARIA-配置：把-config-yml-example-复制为-config-yml："><a href="#复制-ARIA-配置：把-config-yml-example-复制为-config-yml：" class="headerlink" title="复制 ARIA 配置：把 _config.yml.example 复制为 _config.yml："></a>复制 ARIA 配置：把 <code>_config.yml.example</code> 复制为 <code>_config.yml</code>：</h6><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cp themes/aria/_config.yml.example themes/aria/_config.yml<br></code></pre></td></tr></table></figure>
+
+<h5 id="修改主题配置，下面的配置需要修改-ARIA-目录下的-主题的-config-yml，不需要修改所有的配置项，只要修改你需要的部分就可以了："><a href="#修改主题配置，下面的配置需要修改-ARIA-目录下的-主题的-config-yml，不需要修改所有的配置项，只要修改你需要的部分就可以了：" class="headerlink" title="修改主题配置，下面的配置需要修改 ARIA 目录下的 主题的 _config.yml，不需要修改所有的配置项，只要修改你需要的部分就可以了："></a>修改主题配置，下面的配置需要修改 ARIA 目录下的 <strong>主题的</strong> <code>_config.yml</code>，不需要修改所有的配置项，只要修改你需要的部分就可以了：</h5><h6 id="菜单设置"><a href="#菜单设置" class="headerlink" title="菜单设置"></a>菜单设置</h6><p>如果你想要启用“分类”和“标签”页面，取消注释 <code>categories</code> 和 <code>tags</code>，然后运行 <code>hexo new page categories</code> 和 <code>hexo new page tags</code> 生成这两个页面，最后分别把 <code>layout: categories</code> 和 <code>layout: tags</code> 添加到对应文件的文件头里。如果你想要启用“关于”页面，运行 <code>hexo new page about</code> 并取消注释即可：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">menu:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">home</span><br>    <span class="hljs-attr">link:</span> <span class="hljs-string">/</span><br>    <span class="hljs-attr">icon:</span> <span class="hljs-string">&lt;i</span> <span class="hljs-string">class="fas</span> <span class="hljs-string">fa-home"&gt;&lt;/i&gt;</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">archives</span><br>    <span class="hljs-attr">link:</span> <span class="hljs-string">archives/</span><br>    <span class="hljs-attr">icon:</span> <span class="hljs-string">&lt;i</span> <span class="hljs-string">class="fas</span> <span class="hljs-string">fa-archive"&gt;&lt;/i&gt;</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">categories</span><br>    <span class="hljs-attr">link:</span> <span class="hljs-string">categories/</span><br>    <span class="hljs-attr">icon:</span> <span class="hljs-string">&lt;i</span> <span class="hljs-string">class="fas</span> <span class="hljs-string">fa-th-list"&gt;&lt;/i&gt;</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">tags</span><br>    <span class="hljs-attr">link:</span> <span class="hljs-string">tags/</span><br>    <span class="hljs-attr">icon:</span> <span class="hljs-string">&lt;i</span> <span class="hljs-string">class="fas</span> <span class="hljs-string">fa-tags"&gt;&lt;/i&gt;</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">about</span><br>    <span class="hljs-attr">link:</span> <span class="hljs-string">about/</span><br>    <span class="hljs-attr">icon:</span> <span class="hljs-string">&lt;i</span> <span class="hljs-string">class="fas</span> <span class="hljs-string">fa-user-edit"&gt;&lt;/i&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="生成Favicon"><a href="#生成Favicon" class="headerlink" title="生成Favicon"></a>生成<code>Favicon</code></h6><p>首先准备好一张图片作为你想要的 favicon 的原图，然后访问 <a href="https://realfavicongenerator.net/" target="_blank" rel="noopener">https://realfavicongenerator.net/</a> 生成各种不同浏览器的 favicon，然后下载压缩包，解压到你站点目录下 <code>source/favicons</code> 目录里（没有则创建一个）。ARIA 会自动加载这些图标。</p>
+<h6 id="网站关键词"><a href="#网站关键词" class="headerlink" title="网站关键词"></a>网站关键词</h6><p>将 <code>keywords</code> 项设置为关键词列表。</p>
+<h6 id="CreativeCommons-许可证"><a href="#CreativeCommons-许可证" class="headerlink" title="CreativeCommons 许可证"></a>CreativeCommons 许可证</h6><p>设置 <code>creative_commons</code> 项。为了保证美观，ARIA 会将链接显示在网站底部。可选的许可证有 <code>by</code>、<code>by-sa</code>、<code>by-nd</code>、<code>by-nc</code>、<code>by-nc-sa</code>、<code>by-nc-nd</code>，有关它们的区别参见 <a href="https://creativecommons.org/licenses/" target="_blank" rel="noopener">https://creativecommons.org/licenses/</a>。</p>
+<h6 id="代码高亮主题"><a href="#代码高亮主题" class="headerlink" title="代码高亮主题"></a>代码高亮主题</h6><p>ARIA 内置了四种常见代码高亮主题，设置 <code>highlight</code> 项为 <code>atom-one-dark</code>、<code>atom-one-light</code>、<code>solarized-dark</code>、<code>solarized-light</code> 中的一个。ARIA 使用了 Hexo 内置的 highlight.js，因此如果你想添加更多的高亮主题，直接访问 <a href="https://github.com/isagalaev/highlight.js/tree/master/src/styles" target="_blank" rel="noopener">highlight.js 的样式仓库</a>，下载你需要的 CSS 文件到你站点的 <code>source/css/</code> 目录（也即在你存放 Markdown 文件的 <code>source/</code> 目录下面创建一个 <code>css/</code> 目录，你也可以把它放到主题的 <code>source/css/</code> 目录，但是这样会污染 git 工作区），然后设置这里的值为你下载的文件名（<strong>不要</strong> 添加<code>.css</code> 后缀，这个是自动添加的）。</p>
+<h6 id="自定义信息"><a href="#自定义信息" class="headerlink" title="自定义信息"></a>自定义信息</h6><p><code>custom_info</code> 项的值会显示在网站底部，出于格式考虑请不要设置过长的字符串。</p>
+<h6 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h6><p>设置 <code>avatar</code> 项为你头像的链接，例如设置 <code>avatar: images/myavatar.png</code>，则你需要把自己的头像放置到站点根目录下的 <code>source/images/myavatar.png</code>。</p>
+<h6 id="自定义-Logo"><a href="#自定义-Logo" class="headerlink" title="自定义 Logo"></a>自定义 Logo</h6><p>设置方法类似于头像，<code>logo</code> 项的值将会被显示在默认顶部 <code>ARIA</code> 的位置，或者如果你想隐藏 logo，把这一项留空。</p>
+<h6 id="自定义主题色"><a href="#自定义主题色" class="headerlink" title="自定义主题色"></a>自定义主题色</h6><p>主题色 <code>color</code> 会被用于页眉和页脚的背景上，一些浏览器也会使用它来辅助变色，例如 Android 版 Chrome 的标题栏颜色，默认为网站的深色。由于颜色以 <code>#</code> 开头，需要加双引号以防止被作为 YAML 的注释。如果你没有特殊需求，最好不要修改这里的颜色。</p>
+<h6 id="Google-页面验证"><a href="#Google-页面验证" class="headerlink" title="Google 页面验证"></a>Google 页面验证</h6><p>如果想把你的网站提交给 Google，需要证明你是此网站的所有者，当 Google 要求你验证时，选择“使用 <meta> 元标签”，复制 <code>content</code> 属性的值，填写到 <code>google_verification</code> 项，然后重新生成发布网站。</p>
+<blockquote>
+<p>Tim_Paik留：如果还需要添加其他标签可以到<code>\themes\aria\layout\_layout.njk</code>中修改</p>
+</blockquote>
+<h6 id="网站创建年份"><a href="#网站创建年份" class="headerlink" title="网站创建年份"></a>网站创建年份</h6><p>将 <code>since</code> 值设为你网站的创建年份，如果留空或者填写年份与当前年份一致，网站底部只会显示当前年份，否则显示 <code>创建年份 - 当前年份</code>。</p>
+<h6 id="搜索设置"><a href="#搜索设置" class="headerlink" title="搜索设置"></a>搜索设置</h6><p>如果需要启用搜索，首先确保第一步中安装了 <code>hexo-generator-search</code>，并且按照第二步配置过了，然后将 <code>search</code> 设置为 <code>true</code>，搜索框会显示在侧边栏的上部。</p>
+<h6 id="侧边栏设置"><a href="#侧边栏设置" class="headerlink" title="侧边栏设置"></a>侧边栏设置</h6><p>有 <code>left</code>、<code>right</code> 和 <code>false</code> 三种选择，设置为 <code>false</code> 则不会显示侧边栏。</p>
+<h6 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h6><p>将 <code>animate</code> 设置为 <code>true</code> 则会启用卡片的翻转动画效果（不建议启用，在某些浏览器和较低配置电脑上可能会导致卡顿）。</p>
+<h6 id="不蒜子计数"><a href="#不蒜子计数" class="headerlink" title="不蒜子计数"></a>不蒜子计数</h6><p>如果需要关闭不蒜子计数，将 <code>busuanzi</code> 设置为 <code>false</code>，否则在页面底部会显示 <code>站点访问次数</code>、<code>站点访问人数</code>、<code>页面访问次数</code>。</p>
+<blockquote>
+<p>推荐关闭，因为这会使完全加载网站变慢</p>
+</blockquote>
+<h6 id="MathJax-设置"><a href="#MathJax-设置" class="headerlink" title="MathJax 设置"></a>MathJax 设置</h6><p><a href="https://www.mathjax.org/" target="_blank" rel="noopener">MathJax</a> 是一套用于在网页上显示数学公式和符号的 JavaScript 排版库，由于其体积较大，ARIA 没有内置，如果你有数学写作需要，首先设置 <code>mathjax</code> 下的 <code>enable</code> 为 <code>true</code>，然后将 <code>cdn</code> 项设置为你要使用的 MathJax CDN，然后在需要使用的页面添加文件头 <code>mathjax: true</code>。设置 <code>global</code> 为 <code>true</code> 可以在全部页面启用 MathJax，但可能会拖慢非数学页面的显示速度。</p>
+<h6 id="常用库-CDN"><a href="#常用库-CDN" class="headerlink" title="常用库 CDN"></a>常用库 CDN</h6><p>可以对 ARIA 内置的库使用 CDN 加速，首先将 <code>lib_cdn</code> 下的 <code>enable</code> 设置为 <code>true</code>，然后将 CDN 地址添加到配置中即可，如果你不了解自己在做什么，请直接跳过这部份。</p>
+<h6 id="社交链接"><a href="#社交链接" class="headerlink" title="社交链接"></a>社交链接</h6><p>先将 <code>social</code> 下面 <code>enable</code> 设置为 <code>true</code>，然后在 <code>links</code> 下添加你的个人社交链接，格式如下：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">social:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">links:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">显示名称</span><br>      <span class="hljs-attr">link:</span> <span class="hljs-string">网页地址</span><br>      <span class="hljs-attr">icon:</span> <span class="hljs-string">你所使用的</span> <span class="hljs-string">Font</span> <span class="hljs-string">Awesome</span> <span class="hljs-string">图标的</span> <span class="hljs-string">HTML</span> <span class="hljs-string">标签</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">显示名称</span><br>      <span class="hljs-attr">link:</span> <span class="hljs-string">网页地址</span><br>      <span class="hljs-attr">icon:</span> <span class="hljs-string">你所使用的</span> <span class="hljs-string">Font</span> <span class="hljs-string">Awesome</span> <span class="hljs-string">图标的</span> <span class="hljs-string">HTML</span> <span class="hljs-string">标签</span><br></code></pre></td></tr></table></figure>
+
+<p>前往 <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a> 获取你想要的图标。</p>
+<h6 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h6><p>先将 <code>blogroll</code> 下面的 <code>enable</code> 设置为 <code>true</code>，然后在 <code>links</code> 下添加友情链接，格式如下：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">blogroll:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">links:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">显示名称</span><br>      <span class="hljs-attr">link:</span> <span class="hljs-string">网页地址</span><br>      <span class="hljs-attr">icon:</span> <span class="hljs-string">你所使用的</span> <span class="hljs-string">Font</span> <span class="hljs-string">Awesome</span> <span class="hljs-string">图标的</span> <span class="hljs-string">HTML</span> <span class="hljs-string">标签</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">显示名称</span><br>      <span class="hljs-attr">link:</span> <span class="hljs-string">网页地址</span><br>      <span class="hljs-attr">icon:</span> <span class="hljs-string">你所使用的</span> <span class="hljs-string">Font</span> <span class="hljs-string">Awesome</span> <span class="hljs-string">图标的</span> <span class="hljs-string">HTML</span> <span class="hljs-string">标签</span><br></code></pre></td></tr></table></figure>
+
+<p>前往 <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a> 获取你想要的图标。</p>
+<h6 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h6><p>首先将 <code>comment</code> 下 <code>enable</code> 设成 <code>true</code> 以全局启用评论（首页、归档、分类、标签页面除外），然后填入你的 Disqus Shortname。如果你有哪个页面想单独关闭评论，添加文件头 <code>comment: false</code> （<code>comment</code> 不是 <code>comments</code>！）。</p>
+<p>如果你使用 commentjs，首先将它的 <code>enable</code> 设置成 <code>true</code>，然后根据你的网站页面存放位置设置 <code>type</code>，支持 <code>github</code> 和 <code>oschina</code>，<code>user</code> 是你在这些网站的用户名，<code>repo</code> 是你这个仓库的名字，<code>client_id</code> 和 <code>client_secret</code> 需要你去 <a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">github</a> 或者 <a href="https://git.oschina.net/oauth/applications/new" target="_blank" rel="noopener">oschina</a> 生成一个应用，然后复制 Token。</p>
+<p>如果你使用 Valine，首先设置 <code>api_id</code> 与 <code>api_key</code>，并将 <code>enable</code> 设置为 <code>true</code>，其它配置项参照 Valine 文档设置。</p>
+<p>如果启用多个评论系统，默认只会显示顺序靠前的（顺序：Disqus，commentjs，Valine）。</p>
+<p>Tips：如果想批量更改新生成的文件的文件头，编辑站点目录下 <code>scaffolds</code> 目录里的文件，Hexo 会把这个目录内的文件作为生成新文件时的模板。</p>
+<h6 id="打赏"><a href="#打赏" class="headerlink" title="打赏"></a>打赏</h6><p>将 <code>reward</code> 下 <code>enable</code> 设置为 <code>true</code> 启用打赏，然后在 <code>comment</code> 项设置你的打赏提示语，然后按需设置三种打赏方式的二维码（微信支付，支付宝，比特币），设置方式同头像，如果想关闭某一项留空即可。</p>
+<h6 id="自动截断摘要"><a href="#自动截断摘要" class="headerlink" title="自动截断摘要"></a>自动截断摘要</h6><p>如果你想自动生成首页的文章摘要，你可以使用这个选项。例如设置 <code>auto_excerpt: 200</code> 就会让主题截取文章的前 200 个字符（不含 HTML 标签）作为摘要。但是如果你想要更好的显示效果，建议你 <strong>在想要的地方放置一个 <code>&lt;!--more--&gt;</code> 标签，在这个标签之前的文章内容会被作为文章的摘要</strong>。</p>
+<h6 id="自定义字体"><a href="#自定义字体" class="headerlink" title="自定义字体"></a>自定义字体</h6><p>首先将 <code>custom_font</code> 下面的 <code>enable</code> 为 <code>true</code>，然后去提供网页字体服务的网站比如 <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a>（如果你不能访问，找个替代品），然后选择所有你需要的字体，把生成的 <code>&lt;link&gt;</code> 标签里面的 <code>href</code> 属性网址复制出来粘贴到 <code>link</code> 选项下面。然后给不同的部分设置不同的字体。</p>
+<p>示例如下：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">custom_font:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">link:</span> <span class="hljs-string">//fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono</span><br>  <span class="hljs-attr">all:</span> <span class="hljs-string">Ubuntu</span> <span class="hljs-comment"># &lt;body&gt; 的字体。</span><br>  <span class="hljs-attr">title:</span> <span class="hljs-string">Roboto</span> <span class="hljs-string">Condensed</span> <span class="hljs-comment"># 标题字体。</span><br>  <span class="hljs-attr">subtitle:</span> <span class="hljs-string">Roboto</span> <span class="hljs-string">Condensed</span> <span class="hljs-comment"># 副标题字体。</span><br>  <span class="hljs-attr">main:</span> <span class="hljs-string">Ubuntu</span> <span class="hljs-comment"># 主要部份字体（菜单以下页脚以上）。</span><br>  <span class="hljs-attr">code:</span> <span class="hljs-string">Ubuntu</span> <span class="hljs-string">Mono</span> <span class="hljs-comment"># 代码字体。</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="内置写作样式"><a href="#内置写作样式" class="headerlink" title="内置写作样式"></a>内置写作样式</h6><p>Markdown 会被编译成 HTML，所以你可以直接在有效的 Markdown 文件里面写 HTML 代码。为了能更好地组织文章结构，主题内置了一些自定义样式类，可以在写作时使用。</p>
+<h6 id="居中引用"><a href="#居中引用" class="headerlink" title="居中引用"></a>居中引用</h6><p>只要给你的 HTML 代码添加 <code>.centerquote</code> 这个类，你就能得到一个有上下边框的居中引用。推荐给 <code>&lt;blockquote&gt;&lt;/blockquote&gt;</code> 标签使用这个类：</p>
+<figure class="hljs highlight HTML"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"centerquote"</span>&gt;</span>居中引用样例<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="彩色警告块"><a href="#彩色警告块" class="headerlink" title="彩色警告块"></a>彩色警告块</h6><p>只要给你的 HTML 代码添加 <code>.alert-red</code>, <code>.alert-green</code> 或 <code>.alert-blue</code>：</p>
+<figure class="hljs highlight HTML"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert-red"</span>&gt;</span>红色警告块样例<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert-green"</span>&gt;</span>绿色警告块样例<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert-blue"</span>&gt;</span>蓝色警告块样例<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="自定义-CSS-和-JavaScript"><a href="#自定义-CSS-和-JavaScript" class="headerlink" title="自定义 CSS 和 JavaScript"></a>自定义 CSS 和 JavaScript</h5><p>如果你需要用自定义的 CSS 覆盖 ARIA 内置的 CSS 样式，可以编辑 <code>themes/aria/source/css/custom.styl</code>，这个文件会被最后加载。</p>
+<p>如果你需要使用自定义的 JavaScript，可以编辑 <code>themes/aria/source/js/custom.js</code>，这个文件会被最后加载。</p>
+<h5 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h5><p>如果你使用了自定义的 CSS 或 JavaScript，更新之前请先用 Git 把它们提交。只有工作区干净的时候才能进行拉取</p>
+<p>然后使用 <code>git pull</code> 拉取最新的更新，如果有冲突请手动合并提交。</p>
+<p>每次更新完了不要忘记对比 <code>_config.yml</code> 和 <code>_config.yml.example</code>，并手动将 example 中的更改应用到你自己的配置中。</p>
+<hr>
+<p>转载完毕！</p>
+<hr>
+<p>未完待续</p>
+<h4 id="留言"><a href="#留言" class="headerlink" title="留言"></a>留言</h4><p>还有什么问题可以直接在评论区提！我会尽量回复的！<br>这里是Tim_Paik，如果有什么好想法或者求助可以找这个邮箱：timpaik#163.com（把#换成@）<br>转载请注明作者en</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Hexo/" rel="tag"><i class="fas fa-tags"></i>Hexo</a>
+        
+        <a class="post-tag button" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fas fa-tags"></i>博客</a>
+        
+        <a class="post-tag button" href="/tags/Blog/" rel="tag"><i class="fas fa-tags"></i>Blog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/" rel="next" title="用HEXO搭建你自己的博客！（上）"><i class="fas fa-angle-left"></i><span class="nav-title">用HEXO搭建你自己的博客！（上）</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8B%EF%BC%89/" rel="prev" title="用HEXO搭建你自己的博客！（下）"><span class="nav-title">用HEXO搭建你自己的博客！（下）</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "la5kNS3GWbGjSJawpTYlEnw7-gzGzoHsz",
+      "appKey": "zAVo5VBdxSyuyzmzjIqUIW9m",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/timpaik.png" alt="Tim_Paik">
+  
+  <h1 class="author-name">Tim_Paik</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">5</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">0</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">4</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#目录"><span class="toc-text">目录</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#安装主题！"><span class="toc-text">安装主题！</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#以下转载与ARIA的github仓库——"><span class="toc-text">以下转载与ARIA的github仓库——</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#修改你站点的-config-yml"><span class="toc-text">修改你站点的_config.yml</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#把主题修改为-aria"><span class="toc-text">把主题修改为 aria</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#语言设置，可以设置的值为-zh-CN、zh-HK、zh-TW-或-en。如果你从别的主题转移过来比如旧版本-NexT，请注意这里不是-zh-Hans-而是-zh-CN。default-是-en-的别名。"><span class="toc-text">语言设置，可以设置的值为 zh_CN、zh_HK、zh_TW 或 en。如果你从别的主题转移过来比如旧版本 NexT，请注意这里不是 zh-Hans 而是 zh_CN。default 是 en 的别名。</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#Hexo-搜索插件的配置"><span class="toc-text">Hexo 搜索插件的配置</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#Hexo-RSS-插件的配置"><span class="toc-text">Hexo RSS 插件的配置</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#高亮设置，Hexo-内置的语法高亮功能使用了-highlight-js，但默认却没有给高亮的类名添加-hljs-的前缀，而-highlight-js-项目提供的-CSS-文件却使用了这个前缀。为了保持和-highlight-js-项目-CSS-文件的兼容性，你需要像下面一样添加-hljs-true-到对应的配置里："><span class="toc-text">高亮设置，Hexo 内置的语法高亮功能使用了 highlight.js，但默认却没有给高亮的类名添加 hljs- 的前缀，而 highlight.js 项目提供的 CSS 文件却使用了这个前缀。为了保持和 highlight.js 项目 CSS 文件的兼容性，你需要像下面一样添加 hljs: true 到对应的配置里：</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#复制-ARIA-配置：把-config-yml-example-复制为-config-yml："><span class="toc-text">复制 ARIA 配置：把 _config.yml.example 复制为 _config.yml：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#修改主题配置，下面的配置需要修改-ARIA-目录下的-主题的-config-yml，不需要修改所有的配置项，只要修改你需要的部分就可以了："><span class="toc-text">修改主题配置，下面的配置需要修改 ARIA 目录下的 主题的 _config.yml，不需要修改所有的配置项，只要修改你需要的部分就可以了：</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#菜单设置"><span class="toc-text">菜单设置</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#生成Favicon"><span class="toc-text">生成Favicon</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#网站关键词"><span class="toc-text">网站关键词</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#CreativeCommons-许可证"><span class="toc-text">CreativeCommons 许可证</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#代码高亮主题"><span class="toc-text">代码高亮主题</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#自定义信息"><span class="toc-text">自定义信息</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#头像"><span class="toc-text">头像</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#自定义-Logo"><span class="toc-text">自定义 Logo</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#自定义主题色"><span class="toc-text">自定义主题色</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#Google-页面验证"><span class="toc-text">Google 页面验证</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#网站创建年份"><span class="toc-text">网站创建年份</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#搜索设置"><span class="toc-text">搜索设置</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#侧边栏设置"><span class="toc-text">侧边栏设置</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#动画"><span class="toc-text">动画</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#不蒜子计数"><span class="toc-text">不蒜子计数</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#MathJax-设置"><span class="toc-text">MathJax 设置</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#常用库-CDN"><span class="toc-text">常用库 CDN</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#社交链接"><span class="toc-text">社交链接</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#友情链接"><span class="toc-text">友情链接</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#评论系统"><span class="toc-text">评论系统</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#打赏"><span class="toc-text">打赏</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#自动截断摘要"><span class="toc-text">自动截断摘要</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#自定义字体"><span class="toc-text">自定义字体</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#内置写作样式"><span class="toc-text">内置写作样式</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#居中引用"><span class="toc-text">居中引用</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#彩色警告块"><span class="toc-text">彩色警告块</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#自定义-CSS-和-JavaScript"><span class="toc-text">自定义 CSS 和 JavaScript</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#更新主题"><span class="toc-text">更新主题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#留言"><span class="toc-text">留言</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="timpaik@163.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-git-square"></i><a href="https://gitee.com/timpaik" target="_blank">Gitee</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/Tim-Paik" target="_blank">GitHub</a></li>
+        
+        <li><i class="fa fa-video"></i><a href="https://space.bilibili.com/173024496" target="_blank">BiliBili</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Tim_Paik</span><span class="year"><i class="far fa-copyright"></i>2020 - 2020</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

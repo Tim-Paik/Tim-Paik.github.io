@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="google-site-verification" content="8Pv6G_8_O93tx_uWCDyrsI-zfr0M483QZDnyaMiNkHU">
+    
+    
+    <meta name="keywords" content="timpaik, Tim_Paik, TimPaik, Tim-Paik, 博客, 个人博客">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="Tim_Paik'Blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>用HEXO搭建你自己的博客！（上） | Tim_Paik'Blog</title>
+  <meta name="generator" content="Hexo 4.2.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">Tim_Paik'Blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://tim-paik.github.io/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Tim_Paik">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/timpaik.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="Tim_Paik'Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">用HEXO搭建你自己的博客！（上）</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-03-11T02:00:00+08:00">2020-03-11 02:00:00</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>前几天我搭建了我的博客！<br>现在我把搭建的过程记下来（顺便存个档防止健忘症en）<br>本文是使用Windows 10 LTSC作为平台搭建的，但Hexo完全跨平台，大部分命令通用（有些命令要加<code>sudo</code>哦）<br>PS:本项目无任何预算！全部是免费的XD</p>
+<a id="more"></a>
+
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p><a href="/2020/03/11/用HEXO搭建你自己的博客！（上）/">用HEXO搭建你自己的博客！（上）</a><br><a href="/2020/03/11/用HEXO搭建你自己的博客！（中）/">用HEXO搭建你自己的博客！（中）</a><br><a href="/2020/03/11/用HEXO搭建你自己的博客！（下）/">用HEXO搭建你自己的博客！（下）</a></p>
+<h4 id="注意！"><a href="#注意！" class="headerlink" title="注意！"></a>注意！</h4><p>本文需要一定的学习能力，需要大量使用命令行及配置文件，请确保你智商在线——</p>
+<h4 id="安装Git并注册Git账号"><a href="#安装Git并注册Git账号" class="headerlink" title="安装Git并注册Git账号"></a>安装<code>Git</code>并注册<code>Git</code>账号</h4><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><h6 id="Windows平台：打开这里！"><a href="#Windows平台：打开这里！" class="headerlink" title="Windows平台：打开这里！"></a>Windows平台：打开<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">这里！</a></h6><p>下载完exe之后打开，然后就不用我说了吧，下一步下一步！</p>
+<h6 id="Linux：别跟我说你都用上Linux还不会安装Git！"><a href="#Linux：别跟我说你都用上Linux还不会安装Git！" class="headerlink" title="Linux：别跟我说你都用上Linux还不会安装Git！"></a>Linux：别跟我说你都用上Linux还不会安装Git！</h6><p>有些发行版上预装了’Git’，你可以试着输入<code>git</code>,如果有反应就可以跳过这一步了<br>Debian/Ubuntu:<code># apt-get install git</code><br>Fedora21及以前版本:<code># yum install git</code><br>Fedora22及以后版本:<code># dnf install git</code><br>Gentoo:<code># emerge --ask --verbose dev-vcs/git</code><br>Arch Linux(manjaro):<code># pacman -S git</code><br>openSUSE:<code># zypper install git</code><br>其他的可以到<a href="https://git-scm.com/download/linux" target="_blank" rel="noopener">官网</a>去看——（都用这么小众的发行版了大概也会装<code>Git</code>了吧）</p>
+<h6 id="Mac-OS-X：没有Mac的我转载了dalao的步骤——"><a href="#Mac-OS-X：没有Mac的我转载了dalao的步骤——" class="headerlink" title="Mac OS X：没有Mac的我转载了dalao的步骤——"></a>Mac OS X：没有Mac的我转载了dalao的步骤——</h6><blockquote>
+<p>从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode，选择菜单“Xcode”-&gt;“Preferences”，在弹出窗口中找到“Downloads”，选择“Command Line Tools”，点“Install”就可以完成安装了。</p>
+</blockquote>
+<h5 id="注册Git账号并创建库"><a href="#注册Git账号并创建库" class="headerlink" title="注册Git账号并创建库"></a>注册<code>Git</code>账号并创建库</h5><p>这里选用<code>Github</code>进行演示（当然你用<code>Gitee</code>也差不多，<code>Coding</code>没用过xd）</p>
+<h6 id="首先进入注册页面注册"><a href="#首先进入注册页面注册" class="headerlink" title="首先进入注册页面注册"></a>首先进入<a href="https://github.com/join?source=header" target="_blank" rel="noopener">注册页面</a>注册</h6><p>注册很简单，不会可以<a href="https://www.baidu.com/s?ie=UTF-8&wd=%E6%B3%A8%E5%86%8Cgithub" target="_blank" rel="noopener">看这里</a></p>
+<h6 id="新建一个仓库"><a href="#新建一个仓库" class="headerlink" title="新建一个仓库"></a>新建一个仓库</h6><p>打开<code>Github</code>(或者<code>Gitee</code>)，点击右上角加号，选择<code>New repository</code>(新建仓库)<br>仓库名称就是你的用户名，然后直接拉到最底下创建！<br>记住你的仓库地址，后面要用</p>
+<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<code>Node.js</code></h4><p>前端必备的软件！</p>
+<h5 id="Windows：依旧是下载后无脑下一步——"><a href="#Windows：依旧是下载后无脑下一步——" class="headerlink" title="Windows：依旧是下载后无脑下一步——"></a>Windows：依旧是下载后无脑下一步——</h5><p>下载链接：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br>国内加速镜像：<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a></p>
+<h5 id="Linux：同Git一样也可以从源里安装，也可以使用下面的方式"><a href="#Linux：同Git一样也可以从源里安装，也可以使用下面的方式" class="headerlink" title="Linux：同Git一样也可以从源里安装，也可以使用下面的方式"></a>Linux：同Git一样也可以从源里安装，也可以使用下面的方式</h5><p>终端执行：</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># wget https://nodejs.org/dist/v10.9.0/node-v10.9.0-linux-x64.tar.xz    // 下载</span><br><span class="hljs-comment"># tar xf  node-v10.9.0-linux-x64.tar.xz       // 解压</span><br><span class="hljs-comment"># cd node-v10.9.0-linux-x64/                  // 进入解压目录</span><br><span class="hljs-comment"># ./bin/node -v                               // 执行node命令 查看版本</span><br></code></pre></td></tr></table></figure>
+<h5 id="Mac-OS-X"><a href="#Mac-OS-X" class="headerlink" title="Mac OS X"></a>Mac OS X</h5><p>终端执行：</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew install node<br></code></pre></td></tr></table></figure>
+
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<code>Hexo</code></h4><p>Hexo基于Nodejs，更多信息可以google，是目前写静态博客的很好的选择<br>本文使用的是主题ARIA，当然你也可以找一个自己喜欢的主题！<a href="https://hexo.io/themes/" target="_blank" rel="noopener">前往选择！</a><br>以下默认你是在root或管理员模式安装的，至于目录随便找一个就好了——<br>注意：将[username].github.io中的[username]替换为你的用户名（Gitee用户还要将github.io替换为gitee.io）</p>
+<h5 id="全局安装hexo"><a href="#全局安装hexo" class="headerlink" title="全局安装hexo"></a>全局安装hexo</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-cli -g<br></code></pre></td></tr></table></figure>
+<h5 id="创建博客！-以及必要修改"><a href="#创建博客！-以及必要修改" class="headerlink" title="创建博客！( 以及必要修改)"></a>创建博客！( 以及必要修改)</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init [username].github.io<br><span class="hljs-built_in">cd</span> [username].github.io<br>npm install --save hexo-renderer-njucks hexo-renderer-stylus hexo-generator-search hexo-generator-feed<br></code></pre></td></tr></table></figure>
+
+<hr>
+<p>未完待续</p>
+<h4 id="留言"><a href="#留言" class="headerlink" title="留言"></a>留言</h4><p>还有什么问题可以直接在评论区提！我会尽量回复的！<br>这里是Tim_Paik，如果有什么好想法或者求助可以找这个邮箱：timpaik#163.com（把#换成@）<br>转载请注明作者en</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Hexo/" rel="tag"><i class="fas fa-tags"></i>Hexo</a>
+        
+        <a class="post-tag button" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fas fa-tags"></i>博客</a>
+        
+        <a class="post-tag button" href="/tags/Blog/" rel="tag"><i class="fas fa-tags"></i>Blog</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2020/03/03/%E5%85%B3%E4%BA%8EAVGPlus/" rel="next" title="关于AVGPlus"><i class="fas fa-angle-left"></i><span class="nav-title">关于AVGPlus</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%AD%EF%BC%89/" rel="prev" title="用HEXO搭建你自己的博客！（中）"><span class="nav-title">用HEXO搭建你自己的博客！（中）</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "la5kNS3GWbGjSJawpTYlEnw7-gzGzoHsz",
+      "appKey": "zAVo5VBdxSyuyzmzjIqUIW9m",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/timpaik.png" alt="Tim_Paik">
+  
+  <h1 class="author-name">Tim_Paik</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">5</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">0</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">4</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#注意！"><span class="toc-text">注意！</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装Git并注册Git账号"><span class="toc-text">安装Git并注册Git账号</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#Windows平台：打开这里！"><span class="toc-text">Windows平台：打开这里！</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#Linux：别跟我说你都用上Linux还不会安装Git！"><span class="toc-text">Linux：别跟我说你都用上Linux还不会安装Git！</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#Mac-OS-X：没有Mac的我转载了dalao的步骤——"><span class="toc-text">Mac OS X：没有Mac的我转载了dalao的步骤——</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#注册Git账号并创建库"><span class="toc-text">注册Git账号并创建库</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#首先进入注册页面注册"><span class="toc-text">首先进入注册页面注册</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#新建一个仓库"><span class="toc-text">新建一个仓库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装Node-js"><span class="toc-text">安装Node.js</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#Windows：依旧是下载后无脑下一步——"><span class="toc-text">Windows：依旧是下载后无脑下一步——</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#Linux：同Git一样也可以从源里安装，也可以使用下面的方式"><span class="toc-text">Linux：同Git一样也可以从源里安装，也可以使用下面的方式</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#Mac-OS-X"><span class="toc-text">Mac OS X</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装Hexo"><span class="toc-text">安装Hexo</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#全局安装hexo"><span class="toc-text">全局安装hexo</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#创建博客！-以及必要修改"><span class="toc-text">创建博客！( 以及必要修改)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#留言"><span class="toc-text">留言</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="timpaik@163.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-git-square"></i><a href="https://gitee.com/timpaik" target="_blank">Gitee</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/Tim-Paik" target="_blank">GitHub</a></li>
+        
+        <li><i class="fa fa-video"></i><a href="https://space.bilibili.com/173024496" target="_blank">BiliBili</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Tim_Paik</span><span class="year"><i class="far fa-copyright"></i>2020 - 2020</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tim-paik.github.io/"/>
-  <updated>2020-03-03T10:44:30.464Z</updated>
+  <updated>2020-03-10T20:18:44.526Z</updated>
   <id>https://tim-paik.github.io/</id>
   
   <author>
@@ -17,23 +17,88 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>用HEXO搭建你自己的博客！（下）</title>
+    <link href="https://tim-paik.github.io/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
+    <id>https://tim-paik.github.io/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8B%EF%BC%89/</id>
+    <published>2020-03-10T23:00:00.000Z</published>
+    <updated>2020-03-10T20:18:44.526Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;前几天我搭建了我的博客！&lt;br&gt;现在我把搭建的过程记下来（顺便存个档防止健忘症en）&lt;br&gt;本文是使用Windows 10 LTSC作为平台搭建的，但Hexo完全跨平台，大部分命令通用（有些命令要加&lt;code&gt;sudo&lt;/code&gt;哦）&lt;br&gt;PS:本项目无任何预算！全部是免费的XD&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>用HEXO搭建你自己的博客！（中）</title>
+    <link href="https://tim-paik.github.io/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%AD%EF%BC%89/"/>
+    <id>https://tim-paik.github.io/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%AD%EF%BC%89/</id>
+    <published>2020-03-10T20:00:00.000Z</published>
+    <updated>2020-03-10T20:25:09.160Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;前几天我搭建了我的博客！&lt;br&gt;现在我把搭建的过程记下来（顺便存个档防止健忘症en）&lt;br&gt;本文是使用Windows 10 LTSC作为平台搭建的，但Hexo完全跨平台，大部分命令通用（有些命令要加&lt;code&gt;sudo&lt;/code&gt;哦）&lt;br&gt;PS:本项目无任何预算！全部是免费的XD&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="https://tim-paik.github.io/tags/Hexo/"/>
+    
+      <category term="博客" scheme="https://tim-paik.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Blog" scheme="https://tim-paik.github.io/tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用HEXO搭建你自己的博客！（上）</title>
+    <link href="https://tim-paik.github.io/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
+    <id>https://tim-paik.github.io/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/</id>
+    <published>2020-03-10T18:00:00.000Z</published>
+    <updated>2020-03-10T20:26:02.604Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;前几天我搭建了我的博客！&lt;br&gt;现在我把搭建的过程记下来（顺便存个档防止健忘症en）&lt;br&gt;本文是使用Windows 10 LTSC作为平台搭建的，但Hexo完全跨平台，大部分命令通用（有些命令要加&lt;code&gt;sudo&lt;/code&gt;哦）&lt;br&gt;PS:本项目无任何预算！全部是免费的XD&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="https://tim-paik.github.io/tags/Hexo/"/>
+    
+      <category term="博客" scheme="https://tim-paik.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Blog" scheme="https://tim-paik.github.io/tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于AVGPlus</title>
     <link href="https://tim-paik.github.io/2020/03/03/%E5%85%B3%E4%BA%8EAVGPlus/"/>
     <id>https://tim-paik.github.io/2020/03/03/%E5%85%B3%E4%BA%8EAVGPlus/</id>
     <published>2020-03-03T10:42:33.000Z</published>
-    <updated>2020-03-03T10:44:30.464Z</updated>
+    <updated>2020-03-10T18:10:20.071Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h5 id=&quot;AVGPlus是什么&quot;&gt;&lt;a href=&quot;#AVGPlus是什么&quot; class=&quot;headerlink&quot; title=&quot;AVGPlus是什么&quot;&gt;&lt;/a&gt;AVGPlus是什么&lt;/h5&gt;&lt;hr&gt;
+      &lt;h5 id=&quot;AVGPlus是什么&quot;&gt;&lt;a href=&quot;#AVGPlus是什么&quot; class=&quot;headerlink&quot; title=&quot;AVGPlus是什么&quot;&gt;&lt;/a&gt;AVGPlus是什么&lt;/h5&gt;&lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt; AVGPlus
-        
-      
+&lt;p&gt; AVGPlus 是一个跨平台、灵活、门槛低的文字游戏制作引擎，&lt;strong&gt;可以把游戏发布到&lt;/strong&gt; &lt;strong&gt;Windows、Mac 桌面平台下，同时还可以发布到 Web 浏览器, Android 以及 iOS 下&lt;/strong&gt;。可以胜几乎任意类型的 Galgame, 包括有声小说、解谜游戏等。引擎拥有超多开放的游戏API，游戏作者可以很轻易从0到1开发文字冒险游戏，甚至可以基于更高级的插件机制开发定制化的游戏特性。&lt;br&gt;AVGPlus 可以做什么：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;带有开放性结局的恋爱游戏&lt;/li&gt;
+&lt;li&gt;背包&amp;amp;道具、收集功能的冒险解谜游戏&lt;/li&gt;
+&lt;li&gt;在游戏里实现和游戏角色聊天的功能&lt;/li&gt;
+&lt;li&gt;在某个“场景”偶遇女主的功能&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
     
     </summary>
     

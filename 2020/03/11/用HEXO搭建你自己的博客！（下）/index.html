@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -158,7 +157,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>分类 | Tim_Paik'Blog</title>
+    <title>用HEXO搭建你自己的博客！（下） | Tim_Paik'Blog</title>
   <meta name="generator" content="Hexo 4.2.0"></head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -179,7 +178,7 @@
         
         <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
         
-        <li role="menuitem"><a href="/categories/" class="current"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
         
         <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
         
@@ -196,23 +195,113 @@
         <div class="main-container">
           <div class="content">
             
-<div id="categories" class="categories page">
-  <article class="article post card">
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://tim-paik.github.io/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8B%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Tim_Paik">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/timpaik.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="Tim_Paik'Blog">
+      </span>
+    </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">分类</h1>
-    </header>
-    <main class="post-main">
-      <h2 class="page-counter">
+      <h1 class="post-title" itemprop="name headline">用HEXO搭建你自己的博客！（下）</h1>
+      <div class="post-meta">
         
-        你还没有分类，现在创建一个吧！
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-03-11T07:00:00+08:00">2020-03-11 07:00:00</time></span>
+        </span>
         
-      </h2>
-      <div class="categories-list">
+        
+        
+        
         
       </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>前几天我搭建了我的博客！<br>现在我把搭建的过程记下来（顺便存个档防止健忘症en）<br>本文是使用Windows 10 LTSC作为平台搭建的，但Hexo完全跨平台，大部分命令通用（有些命令要加<code>sudo</code>哦）<br>PS:本项目无任何预算！全部是免费的XD</p>
+<a id="more"></a>
+
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p><a href="/2020/03/11/用HEXO搭建你自己的博客！（上）/">用HEXO搭建你自己的博客！（上）</a><br><a href="/2020/03/11/用HEXO搭建你自己的博客！（中）/">用HEXO搭建你自己的博客！（中）</a><br><a href="/2020/03/11/用HEXO搭建你自己的博客！（下）/">用HEXO搭建你自己的博客！（下）</a></p>
+<h4 id="配置站点地图"><a href="#配置站点地图" class="headerlink" title="配置站点地图"></a>配置站点地图</h4><p>在你的hexo根目录下运行：</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-generator-sitemap --save-dev<br>npm install hexo-generator-baidu-sitemap --save-dev<br></code></pre></td></tr></table></figure>
+
+<p>然后再到<strong>你站点的</strong><code>_config.yml</code>中添加：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 自动生成sitemap</span><br><span class="hljs-attr">sitemap:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">sitemap.xml</span><br><span class="hljs-attr">baidusitemap:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">baidusitemap.xml</span><br></code></pre></td></tr></table></figure>
+
+<p>就基本完成了！</p>
+<h4 id="安装自动发布工具"><a href="#安装自动发布工具" class="headerlink" title="安装自动发布工具"></a>安装自动发布工具</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
+
+<h4 id="写博客！"><a href="#写博客！" class="headerlink" title="写博客！"></a>写博客！</h4><p>接下来你需要在博客根目录运行以下命令来创建一篇新博客：</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo new <span class="hljs-string">"你的博客标题"</span><br></code></pre></td></tr></table></figure>
+
+<p>然后你就可以运行<code>hexo s</code>来测试你的博客了！<br>直接访问:<a href="localhost:4000">localhost:4000</a>就可以！</p>
+<h4 id="终于到了发布的环节了！"><a href="#终于到了发布的环节了！" class="headerlink" title="终于到了发布的环节了！"></a>终于到了发布的环节了！</h4><p>测试没问题之后，直接在博客根目录运行以下命令</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br></code></pre></td></tr></table></figure>
+
+<p>如果是是第一次上传，你需要输入你的github(gitee)账号和密码，就能上传了！</p>
+<h4 id="访问！"><a href="#访问！" class="headerlink" title="访问！"></a>访问！</h4><p>至此你的博客基本就做完了，打开你的博客地址可以看吧！<br>在浏览器里打开[username].github.io就能看到了！</p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><p>还有什么问题可以直接在评论区提！我会尽量回复的！<br>这里是Tim_Paik，如果有什么好想法或者求助可以找这个邮箱：timpaik#163.com（把#换成@）<br>转载请注明作者en</p>
+<h4 id="留言"><a href="#留言" class="headerlink" title="留言"></a>留言</h4><p>还有什么问题可以直接在评论区提！我会尽量回复的！<br>这里是Tim_Paik，如果有什么好想法或者求助可以找这个邮箱：timpaik#163.com（把#换成@）<br>转载请注明作者en</p>
+
     </main>
-    <footer class="post-footer"></footer>
+    <footer class="post-footer">
+      
+    </footer>
   </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%AD%EF%BC%89/" rel="next" title="用HEXO搭建你自己的博客！（中）"><i class="fas fa-angle-left"></i><span class="nav-title">用HEXO搭建你自己的博客！（中）</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "la5kNS3GWbGjSJawpTYlEnw7-gzGzoHsz",
+      "appKey": "zAVo5VBdxSyuyzmzjIqUIW9m",
+      "verify": "false",
+      "notify": "false",
+      "avatar": "mm",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
 </div>
 
           </div>
@@ -274,6 +363,17 @@
   <div class="sidebar-sticky">
     
     
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#配置站点地图"><span class="toc-text">配置站点地图</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#安装自动发布工具"><span class="toc-text">安装自动发布工具</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#写博客！"><span class="toc-text">写博客！</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#终于到了发布的环节了！"><span class="toc-text">终于到了发布的环节了！</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#访问！"><span class="toc-text">访问！</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#结尾"><span class="toc-text">结尾</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#留言"><span class="toc-text">留言</span></a></li></ol></div>
+    </div>
+    
+    
+    
     <hr>
     <div class="social-link sidebar-item">
       <div><i class="far fa-address-card"></i>社交链接</p></div>
@@ -329,5 +429,3 @@
 
   </body>
 </html>
-
-
