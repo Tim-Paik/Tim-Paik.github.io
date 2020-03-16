@@ -98,11 +98,22 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title></title>
+      <link href="/404.html"/>
+      <url>/404.html</url>
       
-        <content type="html"><![CDATA[<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>留坑代填——</p><hr><p>好吧不皮了QAQ</p><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><p>男，生日 2005-02-23 ，现居住在华北的一个五线小城市里</p><p>身高 1.78m ，体重 53 kg，对于自己不喜欢的东西不大认真<del>所以各种方面都比较咸鱼</del>。</p><p>于是！我养成了摸鱼的好习惯，然后学到了一大堆 “奇怪” 的知识——</p><p>比如：什么Linux啦，自建博客啦，<del>Git之类的，现在好像能写一个小小的程序了</del></p><p>当然由于摸鱼，都不是很精通，充其量就是知道而已<del>（买电脑不会被骗的那种）</del></p><hr><h5 id="爱好"><a href="#爱好" class="headerlink" title="爱好"></a>爱好</h5><p>别人推荐的我基本都会试试看的！</p><p>目前比较喜欢的是计算机之类的<del>（有人还问我会不会成为程序猿，我：我不知道啊）</del>，二次元什么的也有涉猎——</p><p>总之！有什么好点子就往我这里塞就对了！</p><p>我的邮箱：<a href="mailto:timpaik@163.com">timpaik@163.com</a></p><p>那么，就这样！<del>当然还可能未完待续</del></p><p>（Ps：这个博客我还不大会用，有人能教教我吗）</p><hr>]]></content>
+        <content type="html"><![CDATA[<!DOCTYPE html><html> <head>   <meta charset="UTF-8" />   <meta name="viewport" content="width=device-width, initial-scale=1" />   <meta name="robots" content="none" />   <title>404 Not Found</title>   <style>  *{font-family:"Microsoft Yahei";margin:0;font-weight:lighter;text-decoration:none;text-align:center;line-height:2.2em;}  html,body{height:100%;}  h1{font-size:100px;line-height:1em;}  table{width:100%;height:100%;border:0;}  </style>  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Tim_Paik'Blog" type="application/atom+xml"></head>  <body>   <table cellspacing="0" cellpadding="0">    <tbody>    <tr>      <td>       <table cellspacing="0" cellpadding="0">        <tbody>        <tr>          <td> <h1>404</h1> <h3>大事不妙啦！</h3> <p>你想访问的页面好像不小心被Tim_Paik给弄丢了qwq<br /> <a href="/">回到主页 &gt;</a> </p> </td>         </tr>        </tbody>      </table> </td>     </tr>    </tbody>  </table>    </body></html>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -120,11 +131,11 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>留坑代填——</p><hr><p>好吧不皮了QAQ</p><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><p>男，生日 2005-02-23 ，现居住在华北的一个五线小城市里</p><p>身高 1.78m ，体重 53 kg，对于自己不喜欢的东西不大认真<del>所以各种方面都比较咸鱼</del>。</p><p>于是！我养成了摸鱼的好习惯，然后学到了一大堆 “奇怪” 的知识——</p><p>比如：什么Linux啦，自建博客啦，<del>Git之类的，现在好像能写一个小小的程序了</del></p><p>当然由于摸鱼，都不是很精通，充其量就是知道而已<del>（买电脑不会被骗的那种）</del></p><hr><h5 id="爱好"><a href="#爱好" class="headerlink" title="爱好"></a>爱好</h5><p>别人推荐的我基本都会试试看的！</p><p>目前比较喜欢的是计算机之类的<del>（有人还问我会不会成为程序猿，我：我不知道啊）</del>，二次元什么的也有涉猎——</p><p>总之！有什么好点子就往我这里塞就对了！</p><p>我的邮箱：<a href="mailto:timpaik@163.com">timpaik@163.com</a></p><p>那么，就这样！<del>当然还可能未完待续</del></p><p>（Ps：这个博客我还不大会用，有人能教教我吗）</p><hr>]]></content>
       
     </entry>
     
