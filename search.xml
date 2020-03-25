@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>说说一些近况——</title>
+      <link href="/2020/03/25/%E8%AF%B4%E8%AF%B4%E4%B8%80%E4%BA%9B%E8%BF%91%E5%86%B5%E2%80%94%E2%80%94/"/>
+      <url>/2020/03/25/%E8%AF%B4%E8%AF%B4%E4%B8%80%E4%BA%9B%E8%BF%91%E5%86%B5%E2%80%94%E2%80%94/</url>
+      
+        <content type="html"><![CDATA[<h4 id="一些近况"><a href="#一些近况" class="headerlink" title="一些近况"></a>一些近况</h4><p>好久没更新了呢——<br><del>(根本没人看好吧)</del></p><h5 id="最近看到了-electron-这个项目，感觉很不错！想学习一下"><a href="#最近看到了-electron-这个项目，感觉很不错！想学习一下" class="headerlink" title="最近看到了 electron 这个项目，感觉很不错！想学习一下"></a>最近看到了 electron 这个项目，感觉很不错！想学习一下</h5><a id="more"></a><p>然后！就莫名陷入了前端的坑（误）<br>基本的 HTML 已经学的差不多了，然后现在在啃 JavaScript，CSS 还在后面、</p><blockquote><p>PS：搞不懂 JavaScript aaaaaaa</p></blockquote><p>但由于学业繁重（毕竟初三了嘛），所以并不是有很多时间来学习 electron ~</p><p>最近很可能会减缓更新了（咕咕咕咕咕）</p><h4 id="然后是博客最近的改动："><a href="#然后是博客最近的改动：" class="headerlink" title="然后是博客最近的改动："></a>然后是博客最近的改动：</h4><ul><li>更改了我的头像！（终于不是一团黑了）</li><li>网站的图标换了——，but，大部分浏览器要清空缓存才能看见，就很头疼</li><li>把我的头像从原来恐怖的8192x8192(要整整8mb!)改成了比较小的分辨率（也没人会点开头像看8）</li><li>建立了另一个关于新冠病毒的页面，具体内容是<code>新冠肺炎防治手册</code>，从alibaba那里扒来的，以下是阿里巴巴的描述：<blockquote><p>为全力抗击新冠疫情，打赢这场必胜之战，国际交流合作势在必行。浙江大学医学院附属第一医院在过去的五十多天，收治了104名确诊患者，创造了“0死亡、0漏诊、0医护人员感染”的奇迹；一线医务工作者在与病魔抗争的同时夜以继日写下防控及临床救治经验，并迅速出版了这本《新冠肺炎防治手册》，希望给全球医务人员一些实用的建议和参考。这本手册在编写过程中对比分析了国内其他团队工作经验，针对患者分型救治原则及诊疗过程中可能发生的各类问题均提供了细致及全面的解答，为院感（医院感染管理）、临床、护理等重要部门提供良好工作借鉴，是一本凝聚了中国顶尖医学专家应对新冠肺炎的综合指南和最佳实践。</p></blockquote></li></ul><blockquote><p>国内链接(gitee) <a href="https://timpaik.gitee.io/covid-19/" target="_blank" rel="noopener">新冠肺炎防治手册(标准版)</a><br>国外链接(github) <a href="https://tim-paik.github.io/COVID-19/">Handbook of COVID-19 Prevention and Treatment (Standard)</a><br>吐槽一下github和gitee，链接大小写都不一样、<br>Ps:可能打开速度很慢很慢，因为这个网页加载的PDF有24mb！（完整版）<br>原文链接（原文的在线阅读是压缩版的很糊）：<a href="https://covid-19.alibabacloud.com/" target="_blank" rel="noopener">https://covid-19.alibabacloud.com/</a></p></blockquote><p>然后、<br>就没有然后了呗~<br>下次更新遥遥无期——</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 日常 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用HEXO搭建你自己的博客！（下）</title>
       <link href="/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
       <url>/2020/03/11/%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%88%E4%B8%8B%EF%BC%89/</url>
@@ -11,6 +30,16 @@
         <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>前几天我搭建了我的博客！<br>现在我把搭建的过程记下来（顺便存个档防止健忘症en）<br>本文是使用Windows 10 LTSC作为平台搭建的，但Hexo完全跨平台，大部分命令通用（有些命令要加<code>sudo</code>哦）<br>PS:本项目无任何预算！全部是免费的XD</p><a id="more"></a><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p><a href="/2020/03/11/用HEXO搭建你自己的博客！（上）/">用HEXO搭建你自己的博客！（上）</a><br><a href="/2020/03/11/用HEXO搭建你自己的博客！（中）/">用HEXO搭建你自己的博客！（中）</a><br><a href="/2020/03/11/用HEXO搭建你自己的博客！（下）/">用HEXO搭建你自己的博客！（下）</a></p><h4 id="配置站点地图"><a href="#配置站点地图" class="headerlink" title="配置站点地图"></a>配置站点地图</h4><p>在你的hexo根目录下运行：</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-generator-sitemap --save-dev<br>npm install hexo-generator-baidu-sitemap --save-dev<br></code></pre></td></tr></table></figure><p>然后再到<strong>你站点的</strong><code>_config.yml</code>中添加：</p><figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 自动生成sitemap</span><br><span class="hljs-attr">sitemap:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">sitemap.xml</span><br><span class="hljs-attr">baidusitemap:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">baidusitemap.xml</span><br></code></pre></td></tr></table></figure><p>就基本完成了！</p><h4 id="安装自动发布工具"><a href="#安装自动发布工具" class="headerlink" title="安装自动发布工具"></a>安装自动发布工具</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure><h4 id="写博客！"><a href="#写博客！" class="headerlink" title="写博客！"></a>写博客！</h4><p>接下来你需要在博客根目录运行以下命令来创建一篇新博客：</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo new <span class="hljs-string">"你的博客标题"</span><br></code></pre></td></tr></table></figure><p>然后你就可以运行<code>hexo s</code>来测试你的博客了！<br>直接访问:<a href="localhost:4000">localhost:4000</a>就可以！</p><h4 id="终于到了发布的环节了！"><a href="#终于到了发布的环节了！" class="headerlink" title="终于到了发布的环节了！"></a>终于到了发布的环节了！</h4><p>测试没问题之后，直接在博客根目录运行以下命令</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br></code></pre></td></tr></table></figure><p>如果是是第一次上传，你需要输入你的github(gitee)账号和密码，就能上传了！</p><h4 id="访问！"><a href="#访问！" class="headerlink" title="访问！"></a>访问！</h4><p>至此你的博客基本就做完了，打开你的博客地址可以看吧！<br>在浏览器里打开[username].github.io就能看到了！</p><h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><p>还有什么问题可以直接在评论区提！我会尽量回复的！<br>这里是Tim_Paik，如果有什么好想法或者求助可以找这个邮箱：timpaik#163.com（把#换成@）<br>转载请注明作者en</p><h4 id="留言"><a href="#留言" class="headerlink" title="留言"></a>留言</h4><p>还有什么问题可以直接在评论区提！我会尽量回复的！<br>这里是Tim_Paik，如果有什么好想法或者求助可以找这个邮箱：timpaik#163.com（把#换成@）<br>转载请注明作者en</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> Blog </tag>
+            
+        </tags>
       
     </entry>
     
@@ -109,11 +138,11 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>留坑代填——</p><hr><p>好吧不皮了QAQ</p><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><p>男，生日 2005-02-23 ，现居住在华北的一个五线小城市里</p><p>身高 1.78m ，体重 53 kg，对于自己不喜欢的东西不大认真<del>所以各种方面都比较咸鱼</del>。</p><p>于是！我养成了摸鱼的好习惯，然后学到了一大堆 “奇怪” 的知识——</p><p>比如：什么Linux啦，自建博客啦，<del>Git之类的，现在好像能写一个小小的程序了</del></p><p>当然由于摸鱼，都不是很精通，充其量就是知道而已<del>（买电脑不会被骗的那种）</del></p><hr><h5 id="爱好"><a href="#爱好" class="headerlink" title="爱好"></a>爱好</h5><p>别人推荐的我基本都会试试看的！</p><p>目前比较喜欢的是计算机之类的<del>（有人还问我会不会成为程序猿，我：我不知道啊）</del>，二次元什么的也有涉猎——</p><p>总之！有什么好点子就往我这里塞就对了！</p><p>我的邮箱：<a href="mailto:timpaik@163.com">timpaik@163.com</a></p><p>那么，就这样！<del>当然还可能未完待续</del></p><p>（Ps：这个博客我还不大会用，有人能教教我吗）</p><hr>]]></content>
       
     </entry>
     
@@ -131,11 +160,11 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>留坑代填——</p><hr><p>好吧不皮了QAQ</p><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><p>男，生日 2005-02-23 ，现居住在华北的一个五线小城市里</p><p>身高 1.78m ，体重 53 kg，对于自己不喜欢的东西不大认真<del>所以各种方面都比较咸鱼</del>。</p><p>于是！我养成了摸鱼的好习惯，然后学到了一大堆 “奇怪” 的知识——</p><p>比如：什么Linux啦，自建博客啦，<del>Git之类的，现在好像能写一个小小的程序了</del></p><p>当然由于摸鱼，都不是很精通，充其量就是知道而已<del>（买电脑不会被骗的那种）</del></p><hr><h5 id="爱好"><a href="#爱好" class="headerlink" title="爱好"></a>爱好</h5><p>别人推荐的我基本都会试试看的！</p><p>目前比较喜欢的是计算机之类的<del>（有人还问我会不会成为程序猿，我：我不知道啊）</del>，二次元什么的也有涉猎——</p><p>总之！有什么好点子就往我这里塞就对了！</p><p>我的邮箱：<a href="mailto:timpaik@163.com">timpaik@163.com</a></p><p>那么，就这样！<del>当然还可能未完待续</del></p><p>（Ps：这个博客我还不大会用，有人能教教我吗）</p><hr>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
