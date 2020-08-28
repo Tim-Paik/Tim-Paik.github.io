@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tim-paik.github.io/"/>
-  <updated>2020-08-23T10:58:43.508Z</updated>
+  <updated>2020-08-28T09:27:58.605Z</updated>
   <id>https://tim-paik.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Rust程序编译报错SSL connect error Unknown error</title>
+    <link href="https://tim-paik.github.io/2020/08/28/Rust%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99SSL-connect-error-Unknown-error/"/>
+    <id>https://tim-paik.github.io/2020/08/28/Rust%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99SSL-connect-error-Unknown-error/</id>
+    <published>2020-08-28T09:11:18.000Z</published>
+    <updated>2020-08-28T09:27:58.605Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近找到了个非常好用的<code>http server</code>，用rust写的：<a href="https://github.com/TheWaWaR/simple-http-server" target="_blank" rel="noopener">链接</a></p><p>一开始我只是想下载试试用一用，却发现<code>release</code>只有远古的0.6版本，新版本需要自己编译</p><p>于是我便尝试搭建<code>Rust</code>的编译环境——其实蛮简单的</p><p>然后遇到了很多坑</p><a id="more"></a><p>编译的时候我首先遇到了rust-toolchain需要nightly的编译器的错误，但是我已经默认是nightly了</p><p>报错提示</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">error: failed to run `rustc` to learn about target-specific information<br><br>Caused by:<br>  process didn<span class="hljs-string">'t exit successfully: `rustc - --crate-name ___ --print=file-names -Ctarget-feature=+crt-static -Zunstable-options --crate-type bin --crate-type rlib --crate-type dylib --crate-type cdylib --crate-type staticlib --crate-type proc-macro --print=sysroot --print=cfg` (exit code: 1)<br>--- stderr<br>error: the option `Z` is only accepted on the nightly compiler</span><br></code></pre></td></tr></table></figure><p>经过一番排查，发现是项目自定义的文件<code>rust-toolchain</code>里写错了，安装并更换nightly的编译器，并且删除<code>rust-toolchain</code>就能搞定。</p><p>然后我又遇到了另一令人迷惑的错误：</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">F:\Git\simple-http-server&gt;cargo build<br>warning: spurious network error (2 tries remaining): [35] SSL connect error (schannel: next InitializeSecurityContext failed: Unknown error (0x80092013) - ���ڵ������������ѻ������������޷���������)<br>warning: spurious network error (2 tries remaining): [35] SSL connect error (schannel: next InitializeSecurityContext failed: Unknown error (0x80092013) - ���ڵ������������ѻ������������޷���������)<br>warning: spurious network error (2 tries remaining): [35] SSL connect error (schannel: next InitializeSecurityContext failed: Unknown error (0x80092013) - ���ڵ������������ѻ������������޷���������)<br>warning: spurious network error (2 tries remaining): [35] SSL connect error (schannel: next InitializeSecurityContext failed: Unknown error (0x80092013) - ���ڵ������������ѻ������������޷���������)<br>warning: spurious network error (2 tries remaining): [35] SSL connect error (schannel: next InitializeSecurityContext failed: Unknown error (0x80092013) - ���ڵ������������ѻ������������޷���������)<br>warning: spurious network error (2 tries remaining): [35] SSL connect error (schannel: next InitializeSecurityContext failed: Unknown error (0x80092013) - ���ڵ������������ѻ������������޷���������)<br></code></pre></td></tr></table></figure><p>报错很长，最后是无法访问<code>https://crates-io.proxy.ustclug.org/api/v1/crates/adler/0.2.3/download</code></p><p>我把这玩意复制到浏览器，发现没问题能下载</p><p>百思不得其解的我又用<code>curl</code>再次访问：</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">&gt; curl -I https://crates-io.proxy.ustclug.org/api/v1/crates/adler/0.2.3/download<br>curl: (35) schannel: next InitializeSecurityContext failed: Unknown error (0x80092013) - 由于吊销服务器已脱机，吊销功能 无法检查吊销。<br></code></pre></td></tr></table></figure><p>??????</p><p>google一番，发现好像是<code>WinSSL / WinTLS</code>的问题（垃圾windows）</p><p><code>curl</code>加上<code>--ssl-no-revoke</code>参数就可以访问了</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>设置环境变量CARGO_HTTP_CHECK_REVOKE为false：</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&gt;<span class="hljs-built_in">set</span> CARGO_HTTP_CHECK_REVOKE=<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure><p>或者在你的<code>%HOMEDRIVE%%HOMEPATH%\.cargo\config</code>文件内添加（没有则创建）</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[http]<br>check-revoke = <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure><p>即可</p><p>《完》</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近找到了个非常好用的&lt;code&gt;http server&lt;/code&gt;，用rust写的：&lt;a href=&quot;https://github.com/TheWaWaR/simple-http-server&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一开始我只是想下载试试用一用，却发现&lt;code&gt;release&lt;/code&gt;只有远古的0.6版本，新版本需要自己编译&lt;/p&gt;
+&lt;p&gt;于是我便尝试搭建&lt;code&gt;Rust&lt;/code&gt;的编译环境——其实蛮简单的&lt;/p&gt;
+&lt;p&gt;然后遇到了很多坑&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="rust" scheme="https://tim-paik.github.io/tags/rust/"/>
+    
+      <category term="http-server" scheme="https://tim-paik.github.io/tags/http-server/"/>
+    
+      <category term="报错解决" scheme="https://tim-paik.github.io/tags/%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>Wexond汉化计划</title>
